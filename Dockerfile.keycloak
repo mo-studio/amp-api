@@ -1,0 +1,10 @@
+# Use this FROM line if you ARE using Apple's M1 chip
+#FROM wizzn/keycloak:12
+
+# Use this FROM line if you are NOT using Apple's M1 chip
+FROM quay.io/keycloak/keycloak:13.0.1
+
+COPY realm-export.json ./realm-export.json
+
+ENV KEYCLOAK_IMPORT ./realm-export.json
+

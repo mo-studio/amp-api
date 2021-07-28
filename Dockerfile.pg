@@ -1,0 +1,9 @@
+FROM postgres:12
+
+ARG pgres_password
+
+ENV POSTGRES_PASSWORD pgres_password
+
+#COPY ./src/database/init.sql /docker-entrypoint-initdb.d/init.sql
+
+EXPOSE 5432
